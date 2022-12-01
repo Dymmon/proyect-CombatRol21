@@ -1,0 +1,15 @@
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top:18cm;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(2,0,36);
+    background: linear-gradient(34deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+  }
+
+  hr{
+    border: 2px solid rgb(235, 4, 196);
+  }

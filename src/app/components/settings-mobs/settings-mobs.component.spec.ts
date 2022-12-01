@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsFightComponent } from './settings-fight.component';
+import { SettingsMobsComponent } from './settings-mobs.component';
 
-describe('SettingsFightComponent', () => {
-  let component: SettingsFightComponent;
-  let fixture: ComponentFixture<SettingsFightComponent>;
+describe('SettingsMobsComponent', () => {
+  let component: SettingsMobsComponent;
+  let fixture: ComponentFixture<SettingsMobsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsFightComponent ]
+      declarations: [ SettingsMobsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SettingsFightComponent);
+    fixture = TestBed.createComponent(SettingsMobsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

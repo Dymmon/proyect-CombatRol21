@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="container">
+            <h1 class="title text-center">Monstruos</h1>
+            <form [formGroup]= "mobsForm">
+                <div class="controls">
+                    <div class="text-center">
+                        <div class="form-group input">
+                            <label>Nombre Monstruo</label>
+                            <input
+                              formControlName="mobName"
+                              type="text"
+                              class="form-control"
+                            />
+                          </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group text-center">
+                                <label>Agilidad</label>
+                                <input formControlName="mobDex" type="number" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group text-center">
+                                <label>Reacción</label>
+                                <input formControlName="mobReact" type="number" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group text-center">
+                                <label>Concentración</label>
+                                <input formControlName="mobCont" type="number" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <button (click)="saveMobsInfo()" type="submit" class="btn btn-primary">Siguiente</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -31,7 +31,7 @@ export class NPlayersComponent implements OnInit {
         players: this.nPlayersForm.value['players'],
         mobs: this.nPlayersForm.value['mobs']};
       this.store.dispatch(SETFIGHTERS({payload}));
-      this.router.navigate(['settings']);
+      this.router.navigate(['settingsPlayers']);
     }else alert("Missing data");
   }
 }

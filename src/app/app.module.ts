@@ -9,7 +9,8 @@ import { NPlayersComponent } from './components/n-players/n-players.component';
 import { fightersReducer } from './components/redux/reducers/fighters.reducer';
 import { ErrorComponent } from './components/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SettingsFightComponent } from './components/settings-fight/settings-fight.component';
+import { SettingsPlayersComponent } from './components/settings-players/settings-players.component';
+import { SettingsMobsComponent } from './components/settings-mobs/settings-mobs.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SettingsFightComponent } from './components/settings-fight/settings-fig
     CombatComponent,
     NPlayersComponent,
     ErrorComponent,
-    SettingsFightComponent
+    SettingsPlayersComponent,
+    SettingsMobsComponent
   ],
   imports: [
     BrowserModule,

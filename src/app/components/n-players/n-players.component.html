@@ -5,21 +5,19 @@
         <h1 class="title">Configurando</h1>
         <form>
           <form [formGroup]= "nPlayersForm">
-            <div class="form-group input">
-              <label for="exampleInputEmail1">Cantidad de personajes</label>
-              <input
-                formControlName="players"
-                type="number"
-                class="form-control"
-              />
+            <div class="row text-center">
+              <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Cantidad de personajes</label>
+                    <input formControlName="players" type="number" class="form-control">
+                </div>
             </div>
-            <div class="form-group input">
-              <label for="exampleInputEmail1">Cantidad de monstruos</label>
-              <input
-              formControlName="mobs"
-                type="number"
-                class="form-control"
-              />
+            <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Cantidad de monstruos</label>
+                  <input formControlName="mobs" type="number" class="form-control">
+              </div>
+          </div>
             </div>
             <button (click)="storeNumbers()" type="submit" class="btn btn-primary">Submit</button>
           </form>
