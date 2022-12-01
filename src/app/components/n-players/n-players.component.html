@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="text-center">
+        <h1 class="title">Configurando</h1>
+        <form>
+          <form [formGroup]= "nPlayersForm">
+            <div class="form-group input">
+              <label for="exampleInputEmail1">Cantidad de personajes</label>
+              <input
+                formControlName="players"
+                type="number"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group input">
+              <label for="exampleInputEmail1">Cantidad de monstruos</label>
+              <input
+                type="number"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <button (click)="storeNumbers()" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
