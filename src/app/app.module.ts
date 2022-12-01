@@ -9,13 +9,15 @@ import { NPlayersComponent } from './components/n-players/n-players.component';
 import { fightersReducer } from './components/redux/reducers/fighters.reducer';
 import { ErrorComponent } from './components/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsFightComponent } from './components/settings-fight/settings-fight.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CombatComponent,
     NPlayersComponent,
-    ErrorComponent
+    ErrorComponent,
+    SettingsFightComponent
   ],
   imports: [
     BrowserModule,

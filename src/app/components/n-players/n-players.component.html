@@ -11,15 +11,14 @@
                 formControlName="players"
                 type="number"
                 class="form-control"
-                aria-describedby="emailHelp"
               />
             </div>
             <div class="form-group input">
               <label for="exampleInputEmail1">Cantidad de monstruos</label>
               <input
+              formControlName="mobs"
                 type="number"
                 class="form-control"
-                aria-describedby="emailHelp"
               />
             </div>
             <button (click)="storeNumbers()" type="submit" class="btn btn-primary">Submit</button>

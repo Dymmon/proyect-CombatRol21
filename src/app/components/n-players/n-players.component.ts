@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { FigthersState } from '../redux/interfaces/figthers.reducers';
+import { SETFIGHTERS } from '../redux/actions/fighters.actions'
 
 @Component({
   selector: 'app-n-players',
@@ -19,23 +20,18 @@ export class NPlayersComponent implements OnInit {
 
   ngOnInit(): void {
     this.nPlayersForm = this.formBuilder.group({
-      players: ['', Validators.required]
+      players: ['', Validators.required],
+      mobs: ['', Validators.required]
     })
-    // this.store.dispatch(RESET());
-    // this.signInForm = this.formBuilder.group({
-    //   rut: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]]
-    // })
   }
 
   storeNumbers(){
-    alert("tremendo" + this.nPlayersForm.value['players']);
-  //   const rut = this.signInForm.value["rut"];
-  //   (this.signInForm.valid)? this.inDB(rut)
-  //   .subscribe(res=>{
-  //     if(res.code === 200){
-  //       this.store.dispatch(AUTHRUT({payload:{rut:rut, pubPem: res.pubPem}}));
-  //       this.router.navigate(['login/password']);
-  //     }else{alert("Missing data")}})
-  //   : alert("Missing data");
+    if(this.nPlayersForm.valid){
+      const payload = {
+        players: this.nPlayersForm.value['players'],
+        mobs: this.nPlayersForm.value['mobs']};
+      this.store.dispatch(SETFIGHTERS({payload}));
+      this.router.navigate(['settings']);
+    }else alert("Missing data");
   }
 }
