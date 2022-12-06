@@ -21,11 +21,9 @@ export class SettingsPlayersComponent implements OnInit {
     ) {
       this.store.select(selectPlayers)
       .subscribe(res=>{
-        if(res !== 0){
           for(let i = 0; i < res; i++){
             this.players[i] = {};
           }
-        }else this.router.navigate(['numberofplayers']);
       })
     }
     ngOnInit(): void {

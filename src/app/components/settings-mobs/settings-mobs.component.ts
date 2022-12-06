@@ -11,18 +11,12 @@ import { FigthersState, selectPlayers } from '../redux/interfaces/figthers.reduc
   styleUrls: ['./settings-mobs.component.css']
 })
 export class SettingsMobsComponent implements OnInit {
-  mob: object;
   public mobsForm !: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private store: Store<FigthersState>
-    ) {
-      this.store.select(selectPlayers)
-      .subscribe(res=>{
-        if(res === 0) this.router.navigate(['numberofplayers']);
-      })
-    }
+    ) { }
   ngOnInit(): void {
     this.mobsForm = this.formBuilder.group({
       mobName: ['', Validators.required],
