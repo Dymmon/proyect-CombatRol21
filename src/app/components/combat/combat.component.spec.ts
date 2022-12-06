@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { fightersReducer } from '../redux/reducers/fighters.reducer';
 
 import { CombatComponent } from './combat.component';
 
@@ -8,7 +10,9 @@ describe('CombatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CombatComponent ]
+      declarations: [ CombatComponent ],
+      imports:[
+        StoreModule.forRoot({fighters: fightersReducer})],
     })
     .compileComponents();
 

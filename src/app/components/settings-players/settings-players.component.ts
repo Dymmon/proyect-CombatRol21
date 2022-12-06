@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { SETPLAYERSSTATS } from '../redux/actions/fighters.actions';
@@ -44,7 +44,7 @@ export class SettingsPlayersComponent implements OnInit {
         }
         this.players[this.index] = player;
         this.index++;
-      }
+      }else alert("Missing data");
     }
     savePlayersInfo(){
       this.store.dispatch(SETPLAYERSSTATS({payload: this.players}));
