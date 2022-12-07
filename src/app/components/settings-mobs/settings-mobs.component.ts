@@ -34,7 +34,7 @@ export class SettingsMobsComponent implements OnInit {
         mobCont: this.mobsForm.value['mobCont']
       }
       this.store.dispatch(SETMOBSTATS({payload:{mobStat: mob}}));
-      this.router.navigate(['combat']);
+      this.router.navigate(['settingsDices']);
     }else alert("Invalid data");
 
   }

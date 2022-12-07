@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { exhaustMap, take } from 'rxjs';
 import { FigthersState, selectArray, selectMobsStats, selectPlayers } from '../redux/interfaces/figthers.reducers';
 
 @Component({
@@ -12,6 +11,7 @@ import { FigthersState, selectArray, selectMobsStats, selectPlayers } from '../r
 export class CombatComponent implements OnInit {
   players: object[];
   mob: object;
+  order: object[];
   constructor(
     private store: Store<FigthersState>,
     private router: Router) {

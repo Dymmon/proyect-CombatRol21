@@ -11,6 +11,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsPlayersComponent } from './components/settings-players/settings-players.component';
 import { SettingsMobsComponent } from './components/settings-mobs/settings-mobs.component';
+import { SettingsDicesComponent } from './components/settings-dices/settings-dices.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SettingsMobsComponent } from './components/settings-mobs/settings-mobs.
     NPlayersComponent,
     ErrorComponent,
     SettingsPlayersComponent,
-    SettingsMobsComponent
+    SettingsMobsComponent,
+    SettingsDicesComponent
   ],
   imports: [
     BrowserModule,

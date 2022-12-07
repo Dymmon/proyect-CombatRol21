@@ -7,11 +7,15 @@ export const SETFIGHTERS = createAction(
 export const SETMOBSTATS = createAction(
     '[Combat21] SetMobStats',
     props<{payload: any}>()
-)
+);
 export const SETPLAYERSSTATS = createAction(
     '[Combat21] SetPlayersStats',
     props<{payload: any}>()
-)
+);
+export const SETMOBSDICES = createAction(
+    '[Combat21] setMobsDices',
+    props<{payload: any}>()
+);
 export const RESET = createAction(
     '[Combat21] Reset'
 );

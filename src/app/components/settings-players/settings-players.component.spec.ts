@@ -10,7 +10,6 @@ describe('SettingsPlayersComponent', () => {
   let component: SettingsPlayersComponent;
   let fixture: ComponentFixture<SettingsPlayersComponent>;
   let routerSpy = {navigate: jasmine.createSpy('navigate')};
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SettingsPlayersComponent ],
@@ -36,14 +35,14 @@ describe('SettingsPlayersComponent', () => {
     component.playersForm.controls['playerDex'].setValue('');
     component.playersForm.controls['playersReact'].setValue('');
     component.playersForm.controls['playerCont'].setValue('');
-    expect(component.savePlayer()).toBeUndefined();
+    expect(component.savePlayer(event)).toBeUndefined();
   }));
   it('should be undefined', fakeAsync (() => {
     component.playersForm.controls['name'].setValue('name');
     component.playersForm.controls['playerDex'].setValue(100);
     component.playersForm.controls['playersReact'].setValue(100);
     component.playersForm.controls['playerCont'].setValue(100);
-    expect(component.savePlayer()).toBeUndefined();
+    expect(component.savePlayer(event)).toBeUndefined();
   }));
   it('should be undefined', () => {
     expect(component.savePlayersInfo()).toBeUndefined();

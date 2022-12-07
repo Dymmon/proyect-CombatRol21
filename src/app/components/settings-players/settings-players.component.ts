@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { SETPLAYERSSTATS } from '../redux/actions/fighters.actions';
 import { FigthersState, selectPlayers } from '../redux/interfaces/figthers.reducers';
+import { PlayerInterface } from '../shared/player.interface';
 
 @Component({
   selector: 'app-settings-players',
@@ -11,8 +12,8 @@ import { FigthersState, selectPlayers } from '../redux/interfaces/figthers.reduc
   styleUrls: ['./settings-players.component.css']
 })
 export class SettingsPlayersComponent implements OnInit {
-  players: object[] = [];
-  index: number = 0;
+  players: Array<PlayerInterface> = [];
+  support: Array<boolean>;
   public playersForm !: FormGroup ;
   constructor(
     private formBuilder: FormBuilder,
@@ -20,10 +21,8 @@ export class SettingsPlayersComponent implements OnInit {
     private store: Store<FigthersState>
     ) {
       this.store.select(selectPlayers)
-      .subscribe(res=>{
-          for(let i = 0; i < res; i++){
-            this.players[i] = {};
-          }
+      .subscribe(res => {
+        this.support = Array(res).fill(0)
       })
     }
     ngOnInit(): void {
@@ -31,23 +30,24 @@ export class SettingsPlayersComponent implements OnInit {
         name: ['', Validators.required],
         playerDex: [0, Validators.required],
         playersReact: [0, Validators.required],
-        playerCont: [0, Validators.required]
+        playerCont: [0, Validators.required],
       })
     }
-    savePlayer(){
+    savePlayer(event: any){
       if(this.playersForm.valid){
         const player = {
           name:this.playersForm.value['name'],
           playerDex:this.playersForm.value['playerDex'],
           playersReact:this.playersForm.value['playersReact'],
-          playerCont:this.playersForm.value['playerCont']
+          playerCont:this.playersForm.value['playerCont'],
+          playerDice: 0
         }
-        this.players[this.index] = player;
-        this.index++;
+        this.players.push(player);
+        event.target.disabled = true;
       }else alert("Missing data");
     }
     savePlayersInfo(){
-      this.store.dispatch(SETPLAYERSSTATS({payload: this.players}));
+      this.store.dispatch(SETPLAYERSSTATS({payload: {array: this.players}}));
       this.router.navigate(['settingsMobs']);
     }
 }
