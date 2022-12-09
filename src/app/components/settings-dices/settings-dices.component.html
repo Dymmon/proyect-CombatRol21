@@ -1,52 +1,79 @@
-<!-- <div class="controls" *ngFor="let player of players"> -->
-<!-- <div class="controls"> -->
-
 <div class="container">
-    <div class="row">
-      <div class="card-dices">
-        <div class="container">
-            <h1 class="title text-center">Dados</h1>
-            <form [formGroup]= "dicesForm">
-                <h3 class="h3-white input">Jugadores</h3>
-                <div class="controls" *ngFor="let player of playersStore"><!-- aquí va el div -->
-                    <div class="text-center">
-                        <div class="form-group input">
-                            <div class="form-group input">
-                                <label>{{player.name}}</label>
-                                <input
-                                  formControlName="playerDice"
-                                  type="number"
-                                  class="form-control"
-                                />
-                              </div>
-                                <button (click)="savePlayer($event)" class="col-sm-4" type="submit" class="btn btn-dark">Guardar</button>
-                              <hr>
-                          </div>
-                    </div>
+  <div class="row">
+    <div class="card-dices">
+      <div class="container">
+        <h1 class="title text-center">Dados</h1>
+        <form [formGroup]="dicesForm">
+          <h3 class="h3-white input">Jugadores</h3>
+          <div class="controls" *ngFor="let player of playersStore">
+            <!-- aquí va el div -->
+            <div class="text-center">
+              <div class="form-group input">
+                <div class="form-group input">
+                  <label>{{ player.name }}</label>
+                  <input
+                    formControlName="playerDice"
+                    type="number"
+                    class="form-control"
+                  />
                 </div>
-                <button (click)="savePlayersInfo($event)" type="submit" class="btn btn-primary">Submit</button>
-                <hr>
-                <h3 class="h3-white input">Monstruos</h3>
-                <div class="controls" *ngFor="let mob of support"><!-- aquí va el div -->
-                    <div class="text-center">
-                        <div class="form-group input">
-                            <div class="form-group input">
-                                <input
-                                  formControlName="mobDice"
-                                  type="number"
-                                  class="form-control"
-                                />
-                              </div>
-                                <button (click)="saveMob($event)" class="col-sm-4" type="submit" class="btn btn-dark">Guardar</button>
-                              <hr>
-                          </div>
-                    </div>
+                <button
+                  (click)="savePlayer($event)"
+                  class="col-sm-4"
+                  type="submit"
+                  class="btn btn-dark"
+                >
+                  Guardar
+                </button>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <button
+            (click)="savePlayersInfo($event)"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+          <hr />
+          <h3 class="h3-white input">Monstruos</h3>
+          <div class="controls" *ngFor="let mob of support">
+            <!-- aquí va el div -->
+            <div class="text-center">
+              <div class="form-group input">
+                <div class="form-group input">
+                  <input
+                    formControlName="mobDice"
+                    type="number"
+                    class="form-control"
+                  />
                 </div>
-                <button (click)="saveMobsInfo($event)" type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <hr>
-            <button (click)="toNext()" type="submit" class="btn btn-danger">Siguiente</button>
-        </div>
+                <button
+                  (click)="saveMob($event)"
+                  class="col-sm-4"
+                  type="submit"
+                  class="btn btn-dark"
+                >
+                  Guardar
+                </button>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <button
+            (click)="saveMobsInfo($event)"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+        <hr />
+        <button (click)="toNext()" type="submit" class="btn btn-danger">
+          Siguiente
+        </button>
       </div>
     </div>
   </div>
+</div>

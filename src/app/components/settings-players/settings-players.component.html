@@ -1,57 +1,73 @@
 <div class="container">
-    <div class="row">
-        <div class="card">
-            <div class="container">
-                <h1 class="title text-center">Players</h1>
-                <form [formGroup]= "playersForm">
-                    <div class="controls" *ngFor="let player of support">
-                        <div class="text-center">
-                            <div class="form-group input">
-                                <label>Nombre Personaje</label>
-                                <input
-                                formControlName="name"
-                                type="text"
-                                class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group text-center">
-                                    <label>Agilidad</label>
-                                    <input
-                                    formControlName="playerDex"
-                                    type="number"
-                                    class="form-control">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group text-center">
-                                    <label>Reacción</label>
-                                    <input
-                                    formControlName="playersReact"
-                                    type="number"
-                                    class="form-control">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group text-center">
-                                    <label>Concentración</label>
-                                    <input
-                                    formControlName="playerCont"
-                                    type="number"
-                                    class="form-control">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <button (click)="savePlayer($event)" type="submit" class="btn btn-dark">Guardar</button>
-                        <hr>
-                    </div>
-                    <button (click)="savePlayersInfo()" type="submit" class="btn btn-primary">Siguiente</button>
-                </form>
+  <div class="row">
+    <div class="card">
+      <div class="container">
+        <h1 class="title text-center">Players</h1>
+        <form [formGroup]="playersForm">
+          <div class="controls" *ngFor="let player of support">
+            <div class="text-center">
+              <div class="form-group input">
+                <label>Nombre Personaje</label>
+                <input
+                  formControlName="name"
+                  type="text"
+                  class="form-control"
+                />
+              </div>
             </div>
-        </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group text-center">
+                  <label>Agilidad</label>
+                  <input
+                    formControlName="playerDex"
+                    type="number"
+                    class="form-control"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group text-center">
+                  <label>Reacción</label>
+                  <input
+                    formControlName="playersReact"
+                    type="number"
+                    class="form-control"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group text-center">
+                  <label>Concentración</label>
+                  <input
+                    formControlName="playerCont"
+                    type="number"
+                    class="form-control"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+            <button
+              (click)="savePlayer($event)"
+              type="submit"
+              class="btn btn-dark"
+            >
+              Guardar
+            </button>
+            <hr />
+          </div>
+          <button
+            (click)="savePlayersInfo()"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Siguiente
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
